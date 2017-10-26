@@ -5,11 +5,33 @@
 
 	<groupId>com.github.crazyxxl</groupId>
 	<artifactId>spring-boot-start-demo-jwt</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>jwt</name>
 	<description>Demo for jwt integration</description>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url> https://github.com/crazyxxl/jwt</url>
+		<connection>https://github.com/crazyxxl/jwt.git</connection>
+		<developerConnection>https://github.com/crazyxxl/jwt</developerConnection>
+	</scm>
+
+
 	<developers>
 		<developer>
 			<name>crazyxxl</name>
@@ -94,6 +116,19 @@
 					<target>${java.version}</target>
 					<showWarnings>true</showWarnings>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
